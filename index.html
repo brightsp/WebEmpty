@@ -119,6 +119,8 @@
         
     if (window.UnityBridge && window.UnityBridge.sendMessageToAndroid) {
       console.log("SendMessageToJavaScript called with message: " + message);
+
+       alert("Message from Unity: " + message);
         window.UnityBridge.sendMessageToAndroid(message);
     } else {
         console.error('UnityBridge is not defined');
