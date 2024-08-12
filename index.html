@@ -114,6 +114,17 @@
         });
       };
       document.body.appendChild(script);
+
+      function SendMessageToJavaScript(message) {
+        
+    if (window.UnityBridge && window.UnityBridge.sendMessageToAndroid) {
+      console.log("SendMessageToJavaScript called with message: " + message);
+        window.UnityBridge.sendMessageToAndroid(message);
+    } else {
+        console.error('UnityBridge is not defined');
+    }
+}
+      
     </script>
   </body>
 </html>
